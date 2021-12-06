@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "759592236937",
+    "project_id": "digidil-f6b05",
+    "storage_bucket": "digidil-f6b05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759592236937:android:ecd4481609ef45e8b01358",
+        "android_client_info": {
+          "package_name": "com.example.digidil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759592236937-gq3u7362078dfar86alfbjd1d40v14kt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXa4T5XA56kBJuH6QfYYKtOE1q7674dIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759592236937-gq3u7362078dfar86alfbjd1d40v14kt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

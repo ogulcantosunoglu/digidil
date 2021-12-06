@@ -1,0 +1,59 @@
+name: digidil
+description: HÖV Alemdağ Tunç Çapa Anadolu Lisesi
+
+publish_to: 'none'
+
+version: 1.0.28
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_staggered_grid_view: ^0.4.0
+  url_launcher: ^6.0.6
+  provider: ^5.0.0
+  package_info: ^2.0.2
+  http: ^0.13.3
+  flutter_local_notifications: ^5.0.0
+  path_provider: ^2.0.1
+  rflutter_alert: ^2.0.2
+  intl: ^0.16.1
+  font_awesome_flutter: ^9.1.0
+  flutter_slidable: ^0.6.0
+
+  firebase_core: ^1.0.4
+  firebase_database: ^6.1.2
+  firebase_messaging: ^10.0.0
+  firebase_remote_config: ^0.10.0+1
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: SourceSansPro
+      fonts:
+        - asset: fonts/SourceSansPro-Black.ttf
+        - asset: fonts/SourceSansPro-BlackItalic.ttf
+        - asset: fonts/SourceSansPro-Bold.ttf
+        - asset: fonts/SourceSansPro-BoldItalic.ttf
+        - asset: fonts/SourceSansPro-ExtraLight.ttf
+        - asset: fonts/SourceSansPro-ExtraLightItalic.ttf
+        - asset: fonts/SourceSansPro-Italic.ttf
+        - asset: fonts/SourceSansPro-Light.ttf
+        - asset: fonts/SourceSansPro-LightItalic.ttf
+        - asset: fonts/SourceSansPro-Regular.ttf
+        - asset: fonts/SourceSansPro-SemiBold.ttf
+        - asset: fonts/SourceSansPro-SemiBoldItalic.ttf
