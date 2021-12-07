@@ -1,7 +1,11 @@
 import 'package:digidil/data/statics/my_appbars.dart';
 import 'package:digidil/data/statics/my_colors.dart';
+import 'package:digidil/models/word.dart';
+import 'package:digidil/services/word_service.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:provider/provider.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -9,13 +13,42 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  List<Word> words = [];
+
   @override
   Widget build(BuildContext context) {
+    WordService wordService = Provider.of<WordService>(context, listen: false);
+
     return Scaffold(
       appBar: MyAppBars.getDefault(context),
       backgroundColor: Colors.white,
-      body: mainWidget(),
+      body: FutureBuilder(
+        future: getWordsFromFirestore(context, wordService),
+        builder: (context, snapshot) {
+          if (snapshot.hasData)
+            return mainWidget();
+          else if (snapshot.hasError)
+            return Center(
+              child: Text(
+                snapshot.error,
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 15,
+                  color: MyColors.tasarimSiyah,
+                  fontFamily: "SourceSansPro",
+                ),
+              ),
+            );
+          else
+            return Center(
+              child: CircularProgressIndicator(
+                color: MyColors.emopasYesil,
+              ),
+            );
+        },
+      ),
       bottomSheet: BottomSheet(
+        backgroundColor: Colors.white,
         builder: (BuildContext context) {
           return Padding(
             padding: EdgeInsets.all(5.0),
@@ -34,6 +67,20 @@ class _MainScreenState extends State<MainScreen> {
         onClosing: () {},
       ),
     );
+  }
+
+  Future getWordsFromFirestore(
+    BuildContext context,
+    WordService wordService,
+  ) async {
+    await Firebase.initializeApp().then(
+      (value) async =>
+          await wordService.getWordsCollectionFromFirebase().then((value) {
+        words = wordService.getWords();
+      }),
+    );
+
+    return "ok";
   }
 
   mainWidget() {

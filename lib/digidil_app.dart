@@ -13,8 +13,6 @@ class DigidilAppState extends State<DigidilApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      debugShowMaterialGrid: false,
       home: FutureBuilder(
         future: getToken(),
         builder: (context, snapshot) => buildApp(context, snapshot),

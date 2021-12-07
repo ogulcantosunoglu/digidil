@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'my_colors.dart';
-
 /// Uygulamamızda kullanacağımız Appbar'ları bu static sınıfta tanımlıyoruz.
 class MyAppBars {
   static AppBar getDefault(
@@ -16,7 +14,7 @@ class MyAppBars {
       title: Column(
         children: <Widget>[
           Text(
-            "Digidil Projesi",
+            "Digidil Project",
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
