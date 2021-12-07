@@ -13,6 +13,7 @@ void main() async {
     MultiProvider(
       providers: [
         Provider(
+          // Firestore Provider
           create: (_) => WordService(),
         )
       ],
