@@ -25,8 +25,7 @@ class _MainScreenState extends State<MainScreen> {
         "Meaning, engagement, date, tryst; Randevu, Atama, Tayin, Görev",
     definitionEN:
         "an arrangement to meet someone at a particular time and place.",
-    definitionTR:
-        "bir kimseden, belli bir yerde ve belli bir saatte buluşmak için söz almak.",
+    definitionTR: "5. Ünite Konu 9",
   );
 
   FocusNode wordFocusNode;
@@ -100,10 +99,12 @@ class _MainScreenState extends State<MainScreen> {
       children: <Widget>[
         textField(),
         card(),
+        buttons(),
       ],
       staggeredTiles: [
         StaggeredTile.extent(3, 65),
-        StaggeredTile.extent(3, 415),
+        StaggeredTile.extent(3, 355),
+        StaggeredTile.extent(3, 65),
       ],
     );
   }
@@ -174,8 +175,8 @@ class _MainScreenState extends State<MainScreen> {
         staggeredTiles: [
           StaggeredTile.extent(3, 75),
           StaggeredTile.extent(3, 25),
-          StaggeredTile.extent(3, 65),
-          StaggeredTile.extent(3, 155),
+          StaggeredTile.extent(3, 55),
+          StaggeredTile.extent(3, 95),
           StaggeredTile.extent(3, 35),
         ],
       ),
@@ -298,27 +299,11 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
         ),
-        Container(
-          alignment: Alignment.centerLeft,
-          padding: EdgeInsets.only(
-            left: 15,
-            right: 15,
-          ),
-          child: Text(
-            '"she made an appointment with my receptionist"',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 14,
-              color: MyColors.tasarimSiyah,
-              fontFamily: "SourceSansPro",
-            ),
-          ),
-        ),
         SizedBox(
           height: 15,
         ),
         Container(
-          alignment: Alignment.centerLeft,
+          alignment: Alignment.center,
           padding: EdgeInsets.only(
             left: 15,
             right: 15,
@@ -340,57 +325,29 @@ class _MainScreenState extends State<MainScreen> {
   relationships() {
     return Container(
       margin: EdgeInsets.symmetric(
-        horizontal: 5,
+        horizontal: 0,
+        vertical: 0,
       ),
       alignment: Alignment.center,
-      child: Icon(
-        Icons.drag_indicator,
-        size: 35,
-        color: MyColors.tasarimSiyah,
+      child: IconButton(
+        icon: Icon(
+          Icons.vpn_key_rounded,
+          size: 35,
+          color: MyColors.tasarimSiyah,
+        ),
+        onPressed: () {},
       ),
     );
   }
 
   buttons() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: <Widget>[
-        IconButton(
-          onPressed: () {},
-          color: MyColors.emopasYesil,
-          icon: Icon(
-            Icons.save,
-            size: 45,
-          ),
-        ),
-        IconButton(
-          onPressed: () {},
-          color: Colors.redAccent,
-          icon: Icon(
-            Icons.delete_forever,
-            size: 45,
-          ),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.qr_code_scanner_rounded,
-            size: 45,
-          ),
-        ),
-      ],
-    );
-  }
-
-  emektar() {
     return Container(
-      child: Text(
-        "Appointment",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 21,
-          color: MyColors.tasarimSiyah,
-          fontFamily: "SourceSansPro",
+      child: IconButton(
+        onPressed: () {},
+        color: Colors.black,
+        icon: Icon(
+          Icons.qr_code_scanner,
+          size: 55,
         ),
       ),
     );
